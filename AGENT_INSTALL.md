@@ -1,41 +1,44 @@
-# 让 agent 自己装
+# Let your agent install it
 
-> 这个文件是写给 agent 看的，也是写给人看的：人负责把下面整段复制过去。
+**English** | [简体中文](AGENT_INSTALL.zh-CN.md)
 
-## 前提
+> This file is written for the agent — and for the human who copies it.
 
-agent 需要：**读写文件**、**跑 python**、能看见这个仓库的路径。
+## Requirements
 
-## 复制这段
+The agent needs: **file read/write**, **Python**, and the path to this repo.
+
+## Copy this
 
 ```
-我要在这个项目里加一个文件式记忆库。
+I want to add a file-based memory to this project.
 
-1. 先读 <仓库>/README.md 和 <仓库>/docs/01-why.md。
-2. 把 <仓库>/template/memory 复制成 <项目>/memory。
-3. 按 <仓库>/docs/02-layers.md 的判据，把能确定的先填；
-   不确定的留空并标 TODO，不要编。
-4. 运行 python <仓库>/tools/build_index.py --root <项目>/memory。
-5. 最后回给我：读了哪些文件、填了哪几处、留空了哪几处、索引生成了没有。
+1. Read <repo>/README.md and <repo>/docs/01-why.md first.
+2. Copy <repo>/template/memory to <project>/memory.
+3. Using the rules in <repo>/docs/02-layers.md, fill in what you can confirm.
+   Leave the rest empty with a TODO. Do not invent.
+4. Run python <repo>/tools/build_index.py --root <project>/memory.
+5. Report back: which files you read, what you filled in, what you left empty,
+   and whether the index was generated.
 ```
 
-## 人验收这一遍
+## For the human: check it once
 
-- [ ] 打开 `memory/facts/*.yaml`，每条都有 `source`；没有出处的删掉
-- [ ] 打开 `memory/entries/`，第一条里没有编造的事
-- [ ] `memory/INDEX.md` 顶部的「待复核」是空的（还没到期的）
-- [ ] `memory/README.md` 已经放进 agent 指令
+- [ ] Open `memory/facts/*.yaml` — every record has a `source`; delete the ones without
+- [ ] Open `memory/entries/` — the first entry contains nothing invented
+- [ ] `memory/INDEX.md` starts with an empty "due for review" section
+- [ ] `memory/README.md` is in your agent's instructions
 
-## 为什么第 3 步要写「不要编」
+## Why step 3 says "do not invent"
 
-绝大多数 agent 装到这一步都会「顺手把空填上」——它不知道你的城市，就猜一个；不知道你在做什么，就按目录名编。
+Most agents will "helpfully" fill the blanks: guess your city, infer your job from a folder name.
 
-编完之后没人发现，库就脏了。**空着比编造好**：空着是 TODO，编造是负债。
+Nobody notices, and the memory is now dirty. **Empty is better than invented**: empty is a TODO, invented is debt.
 
-## 装完还想加东西
+## After it's installed
 
-- 常想起来的事 → 写进 `memory/topics.txt`
-- 重复踩的坑 → 写进 `memory/experience/`
-- 换了机器、换了项目 → 更新 `memory/facts/04_environment.yaml`
+- Words you keep searching for → add to `memory/topics.txt`
+- The same pitfall twice → write it to `memory/experience/`
+- New machine or project → update `memory/facts/04_environment.yaml`
 
-都改完再跑一次索引。
+Re-run the index after any change.

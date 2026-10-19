@@ -1,108 +1,112 @@
 # agent-memory-kit
 
-> **记忆 + 大模型 = 专属个人 agent。**
-> 这个仓库做的是左边那一半：一份放在磁盘上的、可读可改可搬的记忆。
+**English** | [简体中文](README.zh-CN.md)
 
-不开数据库，不上向量库（除非你真的需要）。
-一个文件夹、一套判据、一个索引脚本。
+> **Memory + LLM = your own personal agent.**
+> This repo is the left half: a memory that lives on disk — readable, editable, portable.
 
----
-
-## 它解决什么
-
-大模型很聪明，但它每次开新窗都从零开始——**聪明，但不认识你**。
-
-这个仓库补的不是能力，是「认识」：你在做什么、上次说到哪、答应过谁什么。
-所以一个专属的个人 agent ≈ 通用大模型 + 只属于你的记忆。
-
-这份记忆是**放在磁盘上的**：人能读、能改、能备份，换模型也不用搬家。
+No database. No vector store (unless you really need one).
+One folder, one set of rules, one index script.
 
 ---
 
-## 你是哪一种
+## What it solves
 
-| 你在做什么 | 从这里开始 |
+LLMs are smart, but every new session starts from zero — **smart, but they don't know you**.
+
+This repo doesn't add capability. It adds **acquaintance**: what you're working on, where you left off, what you promised whom.
+A personal agent ≈ a general LLM + a memory that belongs only to you.
+
+That memory lives **on disk**: humans can read it, edit it, back it up — and it survives a model swap.
+
+---
+
+## Which one are you?
+
+| What you're doing | Start here |
 |---|---|
-| 在跑长期 agent，它老忘事 | [为什么用文件](docs/01-why.md) → [怎么用](docs/04-workflow.md) |
-| 在做陪伴型 agent | [这一篇](docs/07-for-companion.md) |
-| 只是来看架构 | [分层判据](docs/02-layers.md) |
-| 想直接上手 | 往下看「10 分钟开始」 |
+| Running a long-lived agent that keeps forgetting | [Why files](docs/01-why.md) → [How to use it](docs/04-workflow.md) |
+| Building a companion agent | [This page](docs/07-for-companion.md) |
+| Just here for the architecture | [Layering rules](docs/02-layers.md) |
+| Want to start now | "Quick start" below |
+
+> The docs are currently written in Chinese. English translations are welcome.
 
 ---
 
-## 10 分钟开始
+## Quick start
 
-### 自己装
+### Install it yourself
 
 ```bash
 cp -r template/memory ./memory
-# 打开 memory/topics.txt，先填 5 个你最常想起来的词
+# open memory/topics.txt and add 5 words you keep looking for
 python tools/build_index.py --root memory
 ```
 
-然后把 `memory/README.md` 的内容放进你的 agent 指令里
-（`AGENTS.md` / `CLAUDE.md` / 系统提示词，放哪都行）。
+Then put `memory/README.md` into your agent's instructions
+(`AGENTS.md` / `CLAUDE.md` / system prompt — anywhere it will be read).
 
-### 让 agent 自己装
+### Let your agent install it
 
-把 [AGENT_INSTALL.md](AGENT_INSTALL.md) 整段发给它。
-它需要会读写文件、会跑 python。
+Paste [AGENT_INSTALL.md](AGENT_INSTALL.md) to it.
+It needs file read/write and Python.
 
 ---
 
-## 里面有什么
+## What's inside
 
 ```
-template/memory/     空库骨架：复制这个目录，就是你的库
-  facts/             事实层（YAML，唯一权威源）
-  entries/           按日期：某天发生了什么
-  knowledge/         脱离项目也成立的技法
-  experience/        跨项目可复用的经验
-  assets/            原始材料，只存不读
-tools/build_index.py 生成 INDEX.md 和 entries/CATALOG.md
-tools/check.py       只读自检：front-matter、重复 id、断链
-docs/                为什么这么设计、怎么用、踩过的坑
-examples/demo/       一个填满的假库（虚构用户「小林」）
+template/memory/     an empty memory — copy this folder to make it yours
+  facts/             facts (YAML, the single source of truth)
+  entries/           dated records: what happened on a given day
+  knowledge/         techniques that outlive a project
+  experience/        reusable lessons, failed approaches included
+  assets/            raw material, stored but never read as instructions
+tools/build_index.py builds INDEX.md and entries/CATALOG.md
+tools/check.py       read-only checks: front matter, duplicate ids, broken links
+docs/                why it's designed this way, how to use it, pitfalls
+examples/demo/       a filled-in demo (fictional user "Kobayashi")
 ```
 
 ---
 
-## 它不做什么
+## What it doesn't do
 
-- **不是向量库的替代品。** 几百到几千条，文件 + 索引足够；到了要语义检索的量级，再上向量库。
-- **不替你判断。** 晋升、降级、删不删，脚本只报告，人拍板。
-- **不装人格。** 人格回答「我是谁」，库回答「什么是真的」。混在一起，库会变成剧本。
-
----
-
-## 看一个填满的例子
-
-[`examples/demo/`](examples/demo/) 是一个虚构用户「小林」的迷你库。
-跑完索引的样子在 [`examples/demo/memory/INDEX.md`](examples/demo/memory/INDEX.md)。
+- **Not a vector-store replacement.** Hundreds to a few thousand entries: files + an index are enough. Go vector only when you actually need semantic search.
+- **It doesn't decide for you.** Promotion, demotion, deletion — the script reports, a human decides.
+- **It doesn't store a persona.** A persona answers "who am I"; a memory answers "what is true". Mix them and the memory becomes a script.
 
 ---
 
-## 为什么是文件
+## See a filled example
 
-- **可读**：打开就能看，不需要工具
-- **可 diff**：每次改动都能看见
-- **可迁移**：换模型、换框架、换机器，库不动
-- **可审计**：谁在什么时候写了什么，有出处
-
-详见 [docs/01-why.md](docs/01-why.md)。
+[`examples/demo/`](examples/demo/) is a fictional user's mini memory.
+The generated index is at [`examples/demo/memory/INDEX.md`](examples/demo/memory/INDEX.md).
 
 ---
 
-## 目录
+## Why files
 
-| 文件 | 管什么 |
+- **Readable**: open it, no tooling required
+- **Diffable**: every change is visible
+- **Portable**: swap the model, the framework, or the machine — the memory stays
+- **Auditable**: every entry has a source
+
+See [docs/01-why.md](docs/01-why.md).
+
+---
+
+## Docs
+
+| File | What it covers |
 |---|---|
-| [docs/02-layers.md](docs/02-layers.md) | 一条信息该进哪层 |
-| [docs/03-lifecycle.md](docs/03-lifecycle.md) | 重 / 中 / 轻、复核、晋升降级 |
-| [docs/04-workflow.md](docs/04-workflow.md) | 开窗读什么、什么时候写、收尾做什么 |
-| [docs/05-pitfalls.md](docs/05-pitfalls.md) | 我们踩过的坑 |
-| [docs/06-for-long-running.md](docs/06-for-long-running.md) | 长期 agent 的最小用法 |
-| [docs/07-for-companion.md](docs/07-for-companion.md) | 陪伴型 agent 的边界 |
+| [docs/02-layers.md](docs/02-layers.md) | Which layer a piece of information belongs to |
+| [docs/03-lifecycle.md](docs/03-lifecycle.md) | Tiers, review dates, promotion and demotion |
+| [docs/04-workflow.md](docs/04-workflow.md) | What to read at start, when to write, what to do at the end |
+| [docs/05-pitfalls.md](docs/05-pitfalls.md) | Mistakes we made the hard way |
+| [docs/06-for-long-running.md](docs/06-for-long-running.md) | The minimal setup for a long-running agent |
+| [docs/07-for-companion.md](docs/07-for-companion.md) | Boundaries for a companion agent |
 
 ---
 
