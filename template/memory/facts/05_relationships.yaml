@@ -1,0 +1,10 @@
+# 身边的人。**只写本人确认过的称呼和关系**，不写猜测，不写私事。
+last_updated: ""
+
+records:
+  - id: person-example
+    value: ""            # TODO：怎么称呼 + 关系（同事 / 家人 / 朋友）
+    updated_at: ""
+    source: ""
+    confidence: low
+    note: ""             # 可选：相处时要注意什么（也要经本人确认）

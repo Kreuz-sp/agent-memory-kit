@@ -1,0 +1,9 @@
+last_updated: 2026-04-01
+
+records:
+  - id: project-atlas
+    value: Atlas——内部数据看板，Flask + SQLite，给运营用
+    status: active
+    updated_at: 2026-03-02
+    source: 仓库 README
+    confidence: high

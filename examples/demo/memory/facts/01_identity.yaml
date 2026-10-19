@@ -1,0 +1,14 @@
+last_updated: 2026-04-02
+
+records:
+  - id: identity-name
+    value: 小林
+    updated_at: 2026-03-01
+    source: 第一次对话时自述
+    confidence: high
+
+  - id: identity-work
+    value: 杭州一家小公司的全栈开发，主要写 Python 和前端
+    updated_at: 2026-03-01
+    source: 自述
+    confidence: high

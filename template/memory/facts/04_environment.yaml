@@ -1,0 +1,15 @@
+# 机器、系统、软件。agent 要动手之前，先看这里。
+last_updated: ""
+
+records:
+  - id: env-primary-machine
+    value: ""            # TODO：主机 / 系统 / 主要用途
+    updated_at: ""
+    source: ""
+    confidence: low
+
+  - id: env-paths
+    value: ""            # TODO：项目放哪、临时文件放哪
+    updated_at: ""
+    source: ""
+    confidence: low

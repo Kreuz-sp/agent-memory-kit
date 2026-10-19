@@ -1,0 +1,11 @@
+# 在做什么。一个项目一条；结束的别删，status 改 closed。
+last_updated: ""
+
+records:
+  - id: project-example
+    value: ""            # TODO：项目名 + 一句话
+    status: active       # active / paused / closed
+    updated_at: ""
+    source: ""
+    confidence: low
+    note: ""             # 可选：卡在哪、等什么

@@ -1,0 +1,21 @@
+# 这个人是谁。只写事实，不写印象。
+last_updated: ""
+
+records:
+  - id: identity-name
+    value: ""            # TODO：称呼 / 名字
+    updated_at: ""
+    source: ""
+    confidence: low
+
+  - id: identity-location
+    value: ""            # TODO：城市 / 时区
+    updated_at: ""
+    source: ""
+    confidence: low
+
+  - id: identity-work
+    value: ""            # TODO：职业 / 作息
+    updated_at: ""
+    source: ""
+    confidence: low
