@@ -25,12 +25,10 @@ That memory lives **on disk**: humans can read it, edit it, back it up — and i
 
 | What you're doing | Start here |
 |---|---|
-| Running a long-lived agent that keeps forgetting | [Why files](docs/01-why.md) → [How to use it](docs/04-workflow.md) |
-| Building a companion agent | [This page](docs/07-for-companion.md) |
-| Just here for the architecture | [Layering rules](docs/02-layers.md) |
+| Running a long-lived agent that keeps forgetting | [Why files](docs/en/01-why.md) → [How to use it](docs/en/04-workflow.md) |
+| Building a companion agent | [This page](docs/en/07-for-companion.md) |
+| Just here for the architecture | [Layering rules](docs/en/02-layers.md) |
 | Want to start now | "Quick start" below |
-
-> The docs are currently written in Chinese. English translations are welcome.
 
 ---
 
@@ -65,7 +63,7 @@ template/memory/     an empty memory — copy this folder to make it yours
   assets/            raw material, stored but never read as instructions
 tools/build_index.py builds INDEX.md and entries/CATALOG.md
 tools/check.py       read-only checks: front matter, duplicate ids, broken links
-docs/                why it's designed this way, how to use it, pitfalls
+docs/                why it's designed this way, how to use it, pitfalls (en/ and zh)
 examples/demo/       a filled-in demo (fictional user "Kobayashi")
 ```
 
@@ -93,7 +91,7 @@ The generated index is at [`examples/demo/memory/INDEX.md`](examples/demo/memory
 - **Portable**: swap the model, the framework, or the machine — the memory stays
 - **Auditable**: every entry has a source
 
-See [docs/01-why.md](docs/01-why.md).
+See [docs/en/01-why.md](docs/en/01-why.md).
 
 ---
 
@@ -101,12 +99,12 @@ See [docs/01-why.md](docs/01-why.md).
 
 | File | What it covers |
 |---|---|
-| [docs/02-layers.md](docs/02-layers.md) | Which layer a piece of information belongs to |
-| [docs/03-lifecycle.md](docs/03-lifecycle.md) | Tiers, review dates, promotion and demotion |
-| [docs/04-workflow.md](docs/04-workflow.md) | What to read at start, when to write, what to do at the end |
-| [docs/05-pitfalls.md](docs/05-pitfalls.md) | Mistakes we made the hard way |
-| [docs/06-for-long-running.md](docs/06-for-long-running.md) | The minimal setup for a long-running agent |
-| [docs/07-for-companion.md](docs/07-for-companion.md) | Boundaries for a companion agent |
+| [docs/en/02-layers.md](docs/en/02-layers.md) | Which layer a piece of information belongs to |
+| [docs/en/03-lifecycle.md](docs/en/03-lifecycle.md) | Tiers, review dates, promotion and demotion |
+| [docs/en/04-workflow.md](docs/en/04-workflow.md) | What to read at start, when to write, what to do at the end |
+| [docs/en/05-pitfalls.md](docs/en/05-pitfalls.md) | Mistakes we made the hard way |
+| [docs/en/06-for-long-running.md](docs/en/06-for-long-running.md) | The minimal setup for a long-running agent |
+| [docs/en/07-for-companion.md](docs/en/07-for-companion.md) | Boundaries for a companion agent |
 
 ---
 

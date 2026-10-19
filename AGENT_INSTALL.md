@@ -13,9 +13,9 @@ The agent needs: **file read/write**, **Python**, and the path to this repo.
 ```
 I want to add a file-based memory to this project.
 
-1. Read <repo>/README.md and <repo>/docs/01-why.md first.
+1. Read <repo>/README.md and <repo>/docs/en/01-why.md first.
 2. Copy <repo>/template/memory to <project>/memory.
-3. Using the rules in <repo>/docs/02-layers.md, fill in what you can confirm.
+3. Using the rules in <repo>/docs/en/02-layers.md, fill in what you can confirm.
    Leave the rest empty with a TODO. Do not invent.
 4. Run python <repo>/tools/build_index.py --root <project>/memory.
 5. Report back: which files you read, what you filled in, what you left empty,

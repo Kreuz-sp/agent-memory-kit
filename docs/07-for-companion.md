@@ -1,5 +1,7 @@
 # 给陪伴型 agent 的边界
 
+[English](en/07-for-companion.md) | **简体中文**
+
 > **这一篇只给陪伴型 agent。** 如果你做的是工具型（写代码、查资料、跑流程），
 > 看 [06-for-long-running.md](06-for-long-running.md) 就够了，下面这些不用硬套。
 >
