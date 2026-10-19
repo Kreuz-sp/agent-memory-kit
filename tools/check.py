@@ -1,11 +1,11 @@
-"""只读自检：front-matter、重复 id、knowledge/experience 的元数据、断链。
+"""Read-only checks: front matter, duplicate ids, knowledge/experience metadata, broken links.
 
-用法:
+Usage:
     python check.py --root memory
 
-退出码:
-    0 = 没有警告
-    1 = 有警告（仍然不改任何文件）
+Exit code:
+    0 = no warnings
+    1 = warnings (no files are modified either way)
 """
 from __future__ import annotations
 
@@ -40,16 +40,16 @@ def front_matter(text: str) -> dict[str, str]:
 def check(root: Path) -> list[str]:
     warnings: list[str] = []
 
-    # 1) facts 里的 id 不许重复
+    # 1) ids in facts must be unique
     seen: dict[str, list[str]] = {}
     for path in sorted((root / "facts").glob("*.yaml")):
         for ident in re.findall(r"^\s*-\s*id:\s*(\S+)", read_text(path), re.M):
             seen.setdefault(ident, []).append(path.name)
     for ident, files in seen.items():
         if len(files) > 1:
-            warnings.append(f"重复的 id：{ident}（{', '.join(files)}）")
+            warnings.append(f"duplicate id: {ident} ({', '.join(files)})")
 
-    # 2) knowledge / experience 必须有 Status 和 Updated
+    # 2) knowledge / experience need Status and Updated
     for folder in ("knowledge", "experience"):
         base = root / folder
         if not base.is_dir():
@@ -59,11 +59,11 @@ def check(root: Path) -> list[str]:
                 continue
             text = read_text(path)
             if not re.search(r"^Status:\s*(active|deprecated)\b", text, re.M):
-                warnings.append(f"{folder}/{path.name}：缺少或无效的 Status")
+                warnings.append(f"{folder}/{path.name}: missing or invalid Status")
             if not re.search(r"^Updated:\s*\d{4}-\d{2}-\d{2}\b", text, re.M):
-                warnings.append(f"{folder}/{path.name}：缺少 Updated")
+                warnings.append(f"{folder}/{path.name}: missing Updated")
 
-    # 3) entries 的 front-matter
+    # 3) front matter of entries
     entries = root / "entries"
     if entries.is_dir():
         for path in sorted(entries.glob("*.md")):
@@ -71,45 +71,45 @@ def check(root: Path) -> list[str]:
                 continue
             fm = front_matter(read_text(path))
             if not fm:
-                warnings.append(f"entries/{path.name}：缺少 front-matter")
+                warnings.append(f"entries/{path.name}: missing front matter")
                 continue
             if not DATE_RE.match(fm.get("date", "")):
-                warnings.append(f"entries/{path.name}：date 不是 YYYY-MM-DD")
+                warnings.append(f"entries/{path.name}: date is not YYYY-MM-DD")
             if fm.get("tier", "") not in TIERS:
-                warnings.append(f"entries/{path.name}：tier 必须是 core / record / raw")
+                warnings.append(f"entries/{path.name}: tier must be core / record / raw")
             if fm.get("status", "") not in STATUSES:
-                warnings.append(f"entries/{path.name}：status 必须是 active / superseded / archived")
+                warnings.append(f"entries/{path.name}: status must be active / superseded / archived")
             if fm.get("tier") == "core" and not fm.get("review"):
-                warnings.append(f"entries/{path.name}：core 条目必须有 review")
+                warnings.append(f"entries/{path.name}: core entries must have a review date")
             if fm.get("review") and not DATE_RE.match(fm["review"]):
-                warnings.append(f"entries/{path.name}：review 不是 YYYY-MM-DD")
+                warnings.append(f"entries/{path.name}: review is not YYYY-MM-DD")
 
-    # 4) 导航页里的相对链接
+    # 4) relative links in navigation pages
     for name in ("README.md", "decisions.md", "commitments.md", "open-threads.md"):
         page = root / name
         if not page.exists():
-            warnings.append(f"缺少导航页：{name}")
+            warnings.append(f"missing navigation page: {name}")
             continue
         for target in re.findall(r"\]\(([^)]+)\)", read_text(page)):
             target = target.split("#")[0].strip()
             if not target or re.match(r"^[a-z]+:", target, re.I):
                 continue
             if not (page.parent / target).exists():
-                warnings.append(f"{name}：断链 {target}")
+                warnings.append(f"{name}: broken link {target}")
 
     return warnings
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="记忆库只读自检")
+    parser = argparse.ArgumentParser(description="Read-only checks for a memory folder")
     parser.add_argument("--root", type=Path, default=Path("memory"))
     args = parser.parse_args()
     root = args.root.resolve()
     if not root.is_dir():
-        raise SystemExit(f"找不到目录：{root}")
+        raise SystemExit(f"Directory not found: {root}")
 
     warnings = check(root)
-    print(f"CHECK: {len(warnings)} 条警告；没有改动任何文件。")
+    print(f"CHECK: {len(warnings)} warning(s); no files changed.")
     for warning in warnings:
         print("WARN:", warning)
     raise SystemExit(0 if not warnings else 1)

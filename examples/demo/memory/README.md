@@ -1,10 +1,10 @@
-# 示例库 · 小林
+# Demo memory · Alex
 
-这是 `template/memory/` 的填满版，用来展示每种文件填完之后长什么样。
+This is a filled-in version of `template/memory/`, showing what each file looks like in use.
 
-规矩与 `template/memory/README.md` 相同，只是内容换成了一个虚构的小林。
+The rules are the same as in `template/memory/README.md`; only the content is different (and fictional).
 
-跑索引：
+Build the index:
 
 ```bash
 python tools/build_index.py --root examples/demo/memory

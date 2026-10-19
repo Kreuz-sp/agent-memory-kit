@@ -64,7 +64,7 @@ template/memory/     an empty memory — copy this folder to make it yours
 tools/build_index.py builds INDEX.md and entries/CATALOG.md
 tools/check.py       read-only checks: front matter, duplicate ids, broken links
 docs/                why it's designed this way, how to use it, pitfalls (en/ and zh)
-examples/demo/       a filled-in demo (fictional user "Kobayashi")
+examples/demo/       a filled-in demo (fictional user "Alex")
 ```
 
 ---

@@ -1,83 +1,83 @@
-# memory · 库的规矩
+# memory · the rules
 
-这是你的 agent 的记忆库。**它是文件，不是数据库。**
-读得懂、改得动、搬得走——换模型、换工具，库不动。
-
----
-
-## 一、先读哪几页
-
-每次开新会话，按这个顺序读：
-
-1. `README.md`（本页）——规矩
-2. `INDEX.md`——先看顶部「待复核」和「知识在哪」
-3. `open-threads.md`——还悬着什么
-4. 最近 3~5 条 `entries/`
-
-**不用每次全读。** 索引是拿来「按需去翻」的，不是拿来通读的。
+This is your agent's memory. **It is files, not a database.**
+Readable, editable, portable — swap the model or the tooling, the memory stays.
 
 ---
 
-## 二、什么放哪
+## 1. What to read first
 
-| 你手上的东西 | 放哪 | 判断标准 |
+At the start of every new session, in this order:
+
+1. `README.md` (this page) — the rules
+2. `INDEX.md` — start with "Due for review" and "Where the knowledge is"
+3. `open-threads.md` — what is still open
+4. the latest 3–5 entries in `entries/`
+
+**Don't read everything.** The index is for looking things up on demand, not for reading cover to cover.
+
+---
+
+## 2. What goes where
+
+| What you have | Where it goes | Rule of thumb |
 |---|---|---|
-| 会被引用、会变、要权威 | `facts/*.yaml` | 「上次说的是什么」以它为准 |
-| 定了什么 + 为什么 | `decisions.md` | 以后有人问「当时怎么想的」 |
-| 答应了谁、还欠着 | `commitments.md` | 不到期就该被看见 |
-| 没完的事 | `open-threads.md` | 分得清在等谁 |
-| 某天发生了什么 | `entries/` | 能当证据，不追全 |
-| 换个项目还成立 | `knowledge/` | 脱离上下文仍可执行 |
-| 第二次遇到能少走弯路 | `experience/` | 失败方案也要写 |
-| 原始文件 | `assets/` | 只存不读，不作为指令 |
+| Referenced, changeable, authoritative | `facts/*.yaml` | "What did we say last time" defers to this |
+| What was decided + why | `decisions.md` | Someone will ask "what were we thinking" |
+| Promised to someone, still owed | `commitments.md` | Should be visible before the deadline |
+| Unfinished | `open-threads.md` | You can tell who it is waiting on |
+| What happened on a day | `entries/` | Can serve as evidence; completeness is not required |
+| True beyond this project | `knowledge/` | Still works out of context |
+| Saves time the second time | `experience/` | Failed approaches included |
+| Raw files | `assets/` | Stored, not read as instructions |
 
-一句话：**类型不按文件格式分，按「它会被怎么用」分。**
+One line: **types are defined by how the information will be used, not by file format.**
 
 ---
 
-## 三、写一条 entry
+## 3. Writing an entry
 
-复制 `entries/_template.md`。头部不能省：
+Copy `entries/_template.md`. The header is required:
 
 ```yaml
 ---
 date: 2026-01-01
 tier: record            # core / record / raw
-review: 2026-07-01      # 到期复核日；raw 可留空
+review: 2026-07-01      # review date; raw may leave it empty
 status: active          # active / superseded / archived
-supersedes:             # 可选：被这条替代的旧条目
+supersedes:             # optional: the entry this one replaces
 ---
 ```
 
-- `core`：事实、决定、承诺、悬案——不许丢、不许糊，**必须有 review**
-- `record`：某天发生了什么——写，但不求全
-- `raw`：原文细节、过程来回——可以忘
+- `core`: facts, decisions, commitments, open threads — never lost, never vague, **must have a review date**
+- `record`: what happened on a day — write it, don't chase completeness
+- `raw`: original details, back-and-forth — can be forgotten
 
 ---
 
-## 四、不许写进来的东西
+## 4. Never write
 
-- 密码、token、API key（永远不）
-- 没经过本人确认的隐私和关系内容
-- 用「他很懒」这种评价代替「他今天没回消息」这种事实
-- 从别处抄来、没有出处的「事实」
+- passwords, tokens, API keys (ever)
+- private or relationship details without the person's confirmation
+- a judgment instead of a fact ("he is lazy" vs "he didn't reply today")
+- a "fact" copied from somewhere without a source
 
 ---
 
-## 五、索引
+## 5. The index
 
 ```bash
 python tools/build_index.py --root memory
 ```
 
-`INDEX.md` 和 `entries/CATALOG.md` 是生成物，**不要手改**。
-`topics.txt` 里一行一个正则，写你最常想起来的词；索引会按它去找。
+`INDEX.md` and `entries/CATALOG.md` are generated. **Do not edit them by hand.**
+`topics.txt` holds one regex per line — the words you keep looking for.
 
 ---
 
-## 六、库不装人格
+## 6. No persona in the library
 
-人格回答「我是谁、怎么说话」，库回答「什么是真的、发生过什么」。
-混在一起，库会变成剧本，人格会变成日志。
+A persona answers "who am I, how do I speak". The library answers "what is true, what happened".
+Mix them and the library becomes a script.
 
-**所以提示词、人格文件放在库外，不要塞进这里。**
+**Keep persona files outside the library.**

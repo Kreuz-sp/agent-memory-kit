@@ -1,17 +1,17 @@
-# 还悬着什么
+# Open threads
 
-## 等我
+## Waiting on me
 
-- [ ] 确认生产机的 systemd 版本
+- [ ] Confirm the systemd version on the production box
 
-## 等人
+## Waiting on someone
 
-- [ ] 等运维开一个测试账号
+- [ ] Ops to create a test account
 
-## 等条件
+## Waiting on a condition
 
-- [ ] 等 Atlas 页面定稿，再决定要不要上 React
+- [ ] Atlas pages to be finalized before deciding on React
 
-## 已关闭
+## Closed
 
-- 2026-03-15：测试机的事解决了，运维直接给了一台旧机器。
+- 2026-03-15: test machine sorted — ops handed over an old box.

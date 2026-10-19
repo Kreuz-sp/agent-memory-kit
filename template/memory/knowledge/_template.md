@@ -1,14 +1,14 @@
 Status: active
 Updated: 2026-01-01
 
-# 标题
+# Title
 
-> 脱离具体项目也成立的技法。**查过的 / 实测的 / 推测的，分开写。**
+> A technique that outlives the project. **Keep checked / tested / guessed separate.**
 
-## 适用场景
+## When it applies
 
-## 做法
+## How
 
-## 坑
+## Pitfalls
 
-## 出处
+## Source

@@ -1,13 +1,13 @@
-# 答应了什么
+# Commitments
 
-## 未完成
+## Open
 
-| 答应谁 | 什么事 | 说定的时间 | 截止 | 状态 |
+| Promised to | What | Agreed on | Due | Status |
 |---|---|---|---|---|
-| 老周 | 周五前给一份部署文档 | 2026-03-12 | 2026-03-20 | 在做 |
+| Zhou | A deployment doc by Friday | 2026-03-12 | 2026-03-20 | in progress |
 
-## 已完成
+## Done
 
-| 答应谁 | 什么事 | 完成时间 | 结果 |
+| Promised to | What | Completed | Result |
 |---|---|---|---|
-| 小林 | 把登录页的复现步骤写下来 | 2026-03-02 | 已写进当天 entry |
+| Alex | Write down the repro steps for the login page bug | 2026-03-02 | written into that day's entry |

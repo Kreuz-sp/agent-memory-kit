@@ -1,6 +1,6 @@
-# 日期条目
+# Entries by date
 
-[返回索引](../INDEX.md)
+[Back to index](../INDEX.md)
 
-> 自动生成。按日期倒序；只列原文，不复述内容。
+> Generated. Newest first. Links only; no summaries.
 

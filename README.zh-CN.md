@@ -45,6 +45,9 @@ python tools/build_index.py --root memory
 然后把 `memory/README.md` 的内容放进你的 agent 指令里
 （`AGENTS.md` / `CLAUDE.md` / 系统提示词，放哪都行）。
 
+> 模板里的规则和说明是英文的（面向国际用户）；中文说明看 `docs/`。
+> 仓库首页是英文，中文版在 [README.zh-CN.md](README.zh-CN.md)。
+
 ### 让 agent 自己装
 
 把 [AGENT_INSTALL.zh-CN.md](AGENT_INSTALL.zh-CN.md) 整段发给它。
@@ -64,7 +67,7 @@ template/memory/     空库骨架：复制这个目录，就是你的库
 tools/build_index.py 生成 INDEX.md 和 entries/CATALOG.md
 tools/check.py       只读自检：front-matter、重复 id、断链
 docs/                为什么这么设计、怎么用、踩过的坑
-examples/demo/       一个填满的假库（虚构用户「小林」）
+examples/demo/       一个填满的假库（虚构用户 Alex）
 ```
 
 ---

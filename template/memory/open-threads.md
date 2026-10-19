@@ -1,19 +1,19 @@
-# 还悬着什么
+# Open threads
 
-> 只写「没完的事」。**决定和承诺不写这里**——它们各有各的文件。
+> Only unfinished things. **Decisions and commitments don't go here** — they have their own files.
 
-## 等我
-
-- [ ] 
-
-## 等人
+## Waiting on me
 
 - [ ] 
 
-## 等条件
+## Waiting on someone
 
 - [ ] 
 
-## 已关闭
+## Waiting on a condition
 
-> 关掉的事挪到这里，留一行结论：怎么关的、什么时候。
+- [ ] 
+
+## Closed
+
+> Move closed items here with one line: how it closed, and when.

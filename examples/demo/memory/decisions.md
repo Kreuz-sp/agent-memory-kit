@@ -1,9 +1,9 @@
-# 定了什么
+# Decisions
 
-## 2026-03-10 - 不上 React，先用服务端模板
+## 2026-03-10 - No React; server-rendered templates for now
 
-- **定了什么**：Atlas 的前端先用 Jinja 模板，不引入 React。
-- **为什么**：只有三个页面，运营只需要看表格；引入构建链会让部署多一步。
-- **谁定的**：小林
-- **影响 / 边界**：页面超过五个，或者需要复杂交互时，重新评估。
-- **后来**：
+- **Decided**: Atlas's frontend uses Jinja templates for now; no React.
+- **Why**: only three pages, and the ops team just needs tables; adding a build chain adds a deployment step.
+- **By whom**: Alex
+- **Impact / boundaries**: re-evaluate when there are more than five pages or complex interactions are needed.
+- **Later**:

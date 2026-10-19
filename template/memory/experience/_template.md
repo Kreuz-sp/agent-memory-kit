@@ -1,14 +1,14 @@
 Status: active
 Updated: 2026-01-01
 
-# 标题
+# Title
 
-> 跨项目可复用的经验。**失败方案也要写**——它比成功方案省时间。
+> A lesson reusable across projects. **Write down failed approaches too** — they save more time than successes.
 
-## 现象
+## Symptom
 
-## 原因
+## Cause
 
-## 下次怎么做
+## Next time
 
-## 别再犯
+## Don't repeat

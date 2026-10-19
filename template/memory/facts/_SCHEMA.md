@@ -1,29 +1,29 @@
-# 事实记录的写法
+# How to write a fact
 
-`facts/` 是**唯一权威的事实源**。别的文件可以引用它，但不要复制它。
+`facts/` is the **single authoritative source of facts**. Other files may reference it, but must not copy it.
 
-## 一条记录
+## One record
 
 ```yaml
 records:
-  - id: workplace             # 唯一、稳定；别用中文，别改
-    value: "某公司 · 运维"     # 事实本身，一句话
-    updated_at: 2026-03-01    # 这条事实何时确认
-    source: 用户自述           # 从哪知道的
+  - id: workplace             # unique, stable; ASCII only, never rename
+    value: "Some Company · ops"  # the fact, one line
+    updated_at: 2026-03-01    # when this fact was confirmed
+    source: user said so      # where it came from
     confidence: high          # high / medium / low
-    note: ""                  # 可选：边界、例外
+    note: ""                  # optional: boundaries, exceptions
 ```
 
-## 规矩
+## Rules
 
-- `id` 一旦用了就别改；真要改，旧的标 `superseded_by`，新的另起一条。
-- `value` 写事实，不写评价。「他最近很累」不是事实；「他连续上了 6 天夜班」是。
-- `source` 必须写。没有出处的条目，等于谣言。
-- `confidence` 是给自己看的：`low` 的条目，用之前先问一句。
-- 顶层 `last_updated` 只是文件的日期，**每条的 `updated_at` 才算数**。
+- Once an `id` is used, don't change it. If it must change, mark the old one `superseded_by` and start a new record.
+- `value` states a fact, not a judgment. "He's been tired lately" is not a fact; "he worked six night shifts in a row" is.
+- `source` is mandatory. An entry without a source is a rumor.
+- `confidence` is for you: when it's `low`, ask before using it.
+- The top-level `last_updated` is just the file's date. **Each record's `updated_at` is what counts.**
 
-## 什么不该进这里
+## What doesn't belong here
 
-- 一次性的对话内容 → 写 `entries/`
-- 怎么装、怎么修 → 写 `knowledge/`
-- 「这个人靠不靠谱」→ 不进库；库只记发生过什么
+- One-off conversation content → `entries/`
+- How to install or fix something → `knowledge/`
+- "Whether this person is reliable" → not in the library at all; record what happened

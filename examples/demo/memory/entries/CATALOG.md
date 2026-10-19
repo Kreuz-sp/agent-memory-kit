@@ -1,14 +1,14 @@
-# 日期条目
+# Entries by date
 
-[返回索引](../INDEX.md)
+[Back to index](../INDEX.md)
 
-> 自动生成。按日期倒序；只列原文，不复述内容。
+> Generated. Newest first. Links only; no summaries.
 
 ## 2026-04
 
-- 2026-04-01 [定下 Atlas 不走容器](2026-04-01-定下不走容器.md)
+- 2026-04-01 [Decided: Atlas will not use containers](2026-04-01-no-containers.md)
 
 ## 2026-03
 
-- 2026-03-12 [部署卡在 systemd 权限上](2026-03-12-部署卡在权限.md)
-- 2026-03-02 [第一次一起改 Atlas 的登录页](2026-03-02-第一次一起改登录页.md)
+- 2026-03-12 [Deployment blocked by systemd permissions](2026-03-12-deploy-permission.md)
+- 2026-03-02 [First time working on the Atlas login page together](2026-03-02-first-pairing.md)

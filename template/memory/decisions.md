@@ -1,29 +1,29 @@
-# 定了什么
+# Decisions
 
-> 一条一个决定。**原因比结论重要**——三个月后你只会记得结论，忘了为什么。
+> One decision per entry. **The why matters more than the what** — in three months you'll remember the conclusion and forget the reasoning.
 
-## 格式
-
-```markdown
-## 2026-01-01 - 一句话
-
-- **定了什么**：
-- **为什么**：
-- **谁定的**：
-- **影响 / 边界**：
-- **后来**：（可选：被哪条取代）
-```
-
-## 被推翻的决定
-
-**不要删。** 在原条目下面补一行：
+## Format
 
 ```markdown
-- **后来**：2026-04-01 被「改用 X」取代，原因是……
+## 2026-01-01 - One line
+
+- **Decided**:
+- **Why**:
+- **By whom**:
+- **Impact / boundaries**:
+- **Later**: (optional: superseded by what)
 ```
 
-删掉它等于删掉「当时为什么那么想」，下次还会踩同一个坑。
+## Superseded decisions
+
+**Don't delete.** Add a line under the original:
+
+```markdown
+- **Later**: superseded on 2026-04-01 by "switch to X", because…
+```
+
+Deleting it deletes "why we thought that then", and you will make the same mistake again.
 
 ---
 
-<!-- 从这里开始写你的 -->
+<!-- start writing below -->

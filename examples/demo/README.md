@@ -1,23 +1,23 @@
-# 示例库：小林
+# Demo memory: Alex
 
-> 这是一个**虚构**的迷你库，用来展示「填满之后长什么样」。
-> 小林是一个虚构的全栈开发者；里面的人名、公司、项目都是假的。
+> A **fictional** mini library that shows what a filled-in memory looks like.
+> Alex is a made-up full-stack developer; every name, company, and project here is fake.
 
 ```
 examples/demo/memory/
-├─ facts/           3 个 YAML
-├─ entries/         3 条（core / record / record）
-├─ knowledge/       1 篇
-├─ experience/      1 篇
-├─ decisions.md     1 条
-├─ commitments.md   1 条
-└─ open-threads.md  4 条
+├─ facts/           3 YAML files
+├─ entries/         3 entries (core / record / record)
+├─ knowledge/       1 note
+├─ experience/      1 note
+├─ decisions.md     1 decision
+├─ commitments.md   1 open commitment
+└─ open-threads.md  4 threads
 ```
 
-跑一遍索引：
+Build the index:
 
 ```bash
 python tools/build_index.py --root examples/demo/memory
 ```
 
-然后看 `examples/demo/memory/INDEX.md`。
+Then open `examples/demo/memory/INDEX.md`.

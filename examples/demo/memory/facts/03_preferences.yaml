@@ -2,7 +2,7 @@ last_updated: 2026-03-20
 
 records:
   - id: preference-answer-style
-    value: 喜欢先给结论再给理由，不喜欢长篇铺垫
+    value: Wants the conclusion first, then the reasoning; dislikes long preambles
     updated_at: 2026-03-20
-    source: 他原话「先说结论」
+    source: exact words "conclusion first"
     confidence: high

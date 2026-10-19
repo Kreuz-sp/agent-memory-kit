@@ -1,23 +1,23 @@
 ---
 date: 2026-01-01
 tier: record            # core / record / raw
-review: 2026-07-01      # 到期复核日；raw 可留空
+review: 2026-07-01      # review date; raw may leave it empty
 status: active          # active / superseded / archived
-supersedes:             # 可选：被这条替代的旧条目文件名
+supersedes:             # optional: the entry this one replaces
 ---
 
-# 标题：一句话说清这天发生了什么
+# Title: one line saying what happened that day
 
-> 时间：
-> 场景：
-> 谁在场：
+> Time:
+> Context:
+> Present:
 
-## 发生了什么（能当证据的部分）
+## What happened (the part that can serve as evidence)
 
-## 定下了什么 / 改变了什么
+## What was decided / changed
 
-## 还悬着
+## Still open
 
-## 出处
+## Source
 
-（文件、链接、原话摘录——有原话就抄原话，别转述）
+(files, links, exact quotes — if there were exact words, quote them; don't paraphrase)

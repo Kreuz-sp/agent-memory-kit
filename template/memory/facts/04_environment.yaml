@@ -1,15 +1,15 @@
-# 机器、系统、软件。agent 要动手之前，先看这里。
+# Machines, OS, software. Read this before touching anything.
 last_updated: ""
 
 records:
   - id: env-primary-machine
-    value: ""            # TODO：主机 / 系统 / 主要用途
+    value: ""            # TODO: host / OS / what it is used for
     updated_at: ""
     source: ""
     confidence: low
 
   - id: env-paths
-    value: ""            # TODO：项目放哪、临时文件放哪
+    value: ""            # TODO: where projects live, where temp files go
     updated_at: ""
     source: ""
     confidence: low

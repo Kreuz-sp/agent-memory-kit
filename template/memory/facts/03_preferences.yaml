@@ -1,15 +1,15 @@
-# 偏好。写「他喜欢什么 / 不喜欢什么」，不写「他是什么样的人」。
+# Preferences. Write "what they like / dislike", not "what kind of person they are".
 last_updated: ""
 
 records:
   - id: preference-communication
-    value: ""            # TODO：喜欢长回答还是短回答；什么时候别打扰
+    value: ""            # TODO: long answers or short; when not to interrupt
     updated_at: ""
     source: ""
     confidence: low
 
   - id: preference-tools
-    value: ""            # TODO：常用工具 / 编辑器 / 语言
+    value: ""            # TODO: editor / language / tools they use
     updated_at: ""
     source: ""
     confidence: low

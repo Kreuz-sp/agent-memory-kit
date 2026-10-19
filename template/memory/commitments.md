@@ -1,19 +1,19 @@
-# 答应了什么
+# Commitments
 
-> 答应的事，不管多小，写进来。**做完就标完成，别删。**
-> 这个文件是给「他还记着，你忘了」这种情况用的。
+> Anything you promised, however small. **Mark it done; don't delete it.**
+> This file exists for the case where they still remember and you forgot.
 
-## 未完成
+## Open
 
-| 答应谁 | 什么事 | 说定的时间 | 截止 | 状态 |
+| Promised to | What | Agreed on | Due | Status |
 |---|---|---|---|---|
 |  |  |  |  |  |
 
-## 已完成
+## Done
 
-| 答应谁 | 什么事 | 完成时间 | 结果 |
+| Promised to | What | Completed | Result |
 |---|---|---|---|
 |  |  |  |  |
 
-> 状态只有三种：`未开始` / `在做` / `卡住`。
-> 卡住的，把「卡在哪」写进 `open-threads.md`。
+> Status is one of: `not started` / `in progress` / `blocked`.
+> If blocked, write what it's blocked on in `open-threads.md`.
