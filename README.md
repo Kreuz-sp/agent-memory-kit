@@ -108,6 +108,14 @@ See [docs/en/01-why.md](docs/en/01-why.md).
 
 ---
 
+## Origin
+
+This kit grew out of an early conversation with GPT about memory architecture, and has been used daily by 夕 (Xi), my personal agent, ever since. What's here is the part that survived that use.
+
+Feedback, corrections, and ideas are welcome — open an issue.
+
+---
+
 ## License
 
 MIT
