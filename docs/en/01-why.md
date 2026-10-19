@@ -27,6 +27,12 @@ It is whether you put things where it can find them next time.
 
 **Files first, retrieval later.** Most personal agents never reach "tens of thousands of entries"; starting with a vector store is usually inventing work.
 
+## How big is it?
+
+Plain text. A thousand entries of about 2 KB each is roughly 2 MB. Ten thousand is still tens of megabytes — smaller than most model weights.
+
+The limiting resource is not disk. It is context: a model can only read so much per turn. That is what the index and the layers are for.
+
 ## Files and vector stores
 
 Files are the source. Vectors are a cache.

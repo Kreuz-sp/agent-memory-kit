@@ -95,6 +95,17 @@ See [docs/en/01-why.md](docs/en/01-why.md).
 
 ---
 
+## Footprint and media
+
+The library is plain text. A thousand entries is a few megabytes — smaller than one photo album.
+What runs out first is not disk, it's the model's context; that's why the index and the layers exist.
+
+Text is the memory. Images, audio, and video are evidence:
+keep them in `assets/`, reference them by relative path from an entry, and keep them out of the index.
+If a recording matters, write down what was said — the file alone won't be read.
+
+---
+
 ## Docs
 
 | File | What it covers |

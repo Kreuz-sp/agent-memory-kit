@@ -55,3 +55,11 @@ Mix them and two things happen:
 ## One hard rule
 
 **An entry without a `source` doesn't exist.** A source can be "user said so", "exact words in conversation", "terminal log", "file X, line N" — but it cannot be empty.
+
+## Media
+
+A file in `assets/` is evidence, not memory.
+
+- Reference it from an entry with a relative path.
+- Write down what it contains if it matters; a screenshot nobody described is a dead end.
+- Keep big files out of git (or use Git LFS). The library should stay small and diffable.
